@@ -4,7 +4,7 @@ import {useWindowDimensions} from 'react-native'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 
-import {BSKY_SERVICE} from '#/lib/constants'
+import {BSKY_SERVICE, POD_PDS_SERVICE} from '#/lib/constants'
 import {logEvent} from '#/lib/statsig/statsig'
 import * as persisted from '#/state/persisted'
 import {useSession} from '#/state/session'
@@ -133,8 +133,8 @@ function DialogInner({
           label="Preferences"
           values={[fixedOption]}
           onChange={values => setFixedOption(values[0])}>
-          <ToggleButton.Button name={BSKY_SERVICE} label={_(msg`Bluesky`)}>
-            <ToggleButton.ButtonText>{_(msg`Bluesky`)}</ToggleButton.ButtonText>
+          <ToggleButton.Button name={POD_PDS_SERVICE} label={_(msg`pod`)}>
+            <ToggleButton.ButtonText>{_(msg`pod`)}</ToggleButton.ButtonText>
           </ToggleButton.Button>
           <ToggleButton.Button
             testID="customSelectBtn"
