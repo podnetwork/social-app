@@ -133,8 +133,12 @@ function DialogInner({
           label="Preferences"
           values={[fixedOption]}
           onChange={values => setFixedOption(values[0])}>
-          <ToggleButton.Button name={POD_PDS_SERVICE} label={_(msg`pod`)}>
-            <ToggleButton.ButtonText>{_(msg`pod`)}</ToggleButton.ButtonText>
+          <ToggleButton.Button
+            name={POD_PDS_SERVICE}
+            label={_(msg`pod network`)}>
+            <ToggleButton.ButtonText>
+              {_(msg`pod network`)}
+            </ToggleButton.ButtonText>
           </ToggleButton.Button>
           <ToggleButton.Button
             testID="customSelectBtn"

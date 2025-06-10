@@ -34,6 +34,7 @@ export type ButtonColor =
   | 'gradient_sunset'
   | 'gradient_nordic'
   | 'gradient_bonfire'
+  | 'pod'
 export type ButtonSize = 'tiny' | 'small' | 'large'
 export type ButtonShape = 'round' | 'square' | 'default'
 export type VariantProps = {
@@ -203,7 +204,7 @@ export const Button = React.forwardRef<View, ButtonProps>(
       const baseStyles: ViewStyle[] = []
       const hoverStyles: ViewStyle[] = []
 
-      if (color === 'primary') {
+      if (color === 'primary' || color === 'pod') {
         if (variant === 'solid') {
           if (!disabled) {
             baseStyles.push({
@@ -481,6 +482,7 @@ export const Button = React.forwardRef<View, ButtonProps>(
         gradient_primary: tokens.gradients.primary,
         gradient_sky: tokens.gradients.sky,
         gradient_midnight: tokens.gradients.midnight,
+        pod: tokens.gradients.pod,
         gradient_sunrise: tokens.gradients.sunrise,
         gradient_sunset: tokens.gradients.sunset,
         gradient_nordic: tokens.gradients.nordic,
@@ -592,7 +594,29 @@ export function useSharedButtonTextStyles() {
   return React.useMemo(() => {
     const baseStyles: TextStyle[] = []
 
-    if (color === 'primary') {
+    if (color === 'pod') {
+      if (variant === 'solid') {
+        if (!disabled) {
+          baseStyles.push({color: t.palette.pod})
+        } else {
+          baseStyles.push({color: t.palette.pod, opacity: 0.5})
+        }
+      } else if (variant === 'outline') {
+        if (!disabled) {
+          baseStyles.push({
+            color: t.palette.pod,
+          })
+        } else {
+          baseStyles.push({color: t.palette.pod, opacity: 0.5})
+        }
+      } else if (variant === 'ghost') {
+        if (!disabled) {
+          baseStyles.push({color: t.palette.pod})
+        } else {
+          baseStyles.push({color: t.palette.pod, opacity: 0.5})
+        }
+      }
+    } else if (color === 'primary') {
       if (variant === 'solid') {
         if (!disabled) {
           baseStyles.push({color: t.palette.white})

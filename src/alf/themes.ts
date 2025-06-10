@@ -1,5 +1,5 @@
 import {atoms} from '#/alf/atoms'
-import {Palette, Theme} from '#/alf/types'
+import {type Palette, type Theme} from '#/alf/types'
 import {
   BLUE_HUE,
   defaultScale,
@@ -62,6 +62,7 @@ export function createThemes({
   const color = {
     like: '#ec4899',
     trueBlack: '#000000',
+    pod: '#34A853',
 
     gray_0: `hsl(${hues.primary}, 20%, ${defaultScale[14]}%)`,
     gray_25: `hsl(${hues.primary}, 20%, ${defaultScale[13]}%)`,
@@ -123,6 +124,7 @@ export function createThemes({
   } as const
 
   const lightPalette = {
+    pod: color.pod,
     white: color.gray_0,
     black: color.gray_1000,
     like: color.like,
@@ -185,6 +187,7 @@ export function createThemes({
   } as const
 
   const darkPalette: Palette = {
+    pod: color.pod,
     white: color.gray_25,
     black: color.trueBlack,
     like: color.like,

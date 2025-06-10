@@ -122,4 +122,11 @@ export const gradients = {
     ],
     hover_value: '#755B62',
   },
+  pod: {
+    values: [
+      [0, '#34A853'],
+      [1, '#34A853'],
+    ],
+    hover_value: '#34A853',
+  },
 } as const

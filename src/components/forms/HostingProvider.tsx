@@ -49,7 +49,9 @@ export function HostingProvider({
             accessibilityHint={_(msg`Changes hosting provider`)}
             onPress={onPressSelectService}
             variant="ghost"
-            color="secondary"
+            color={
+              toNiceDomain(serviceUrl).includes('pod') ? 'pod' : 'secondary'
+            }
             size="tiny"
             style={[
               a.px_xs,
@@ -68,7 +70,7 @@ export function HostingProvider({
           label={toNiceDomain(serviceUrl)}
           accessibilityHint={_(msg`Changes hosting provider`)}
           variant="solid"
-          color="secondary"
+          color={toNiceDomain(serviceUrl).includes('pod') ? 'pod' : 'secondary'}
           style={[
             a.w_full,
             a.flex_row,

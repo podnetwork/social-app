@@ -52,7 +52,7 @@ export function toNiceDomain(url: string): string {
   try {
     const urlp = new URL(url)
     if (`https://${urlp.host}` === POD_PDS_SERVICE) {
-      return 'pod'
+      return 'pod network'
     }
     if (`https://${urlp.host}` === BSKY_SERVICE) {
       return 'Bluesky Social'
